@@ -1,0 +1,69 @@
+plugins {
+    id 'org.jetbrains.kotlin.js' version '1.4.31'
+}
+
+//group 'br.com.dlogica'
+
+task wrapper(type: Wrapper){
+    gradleVersion = '1.4.31'
+}
+
+repositories {
+    //maven { url "https://bintray.com/kotlin/js-externals/kotlin-js-jquery" }
+    //google()
+    jcenter()
+
+    mavenCentral()
+    maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
+    maven { url "https://kotlin.bintray.com/js-externals" }
+    //maven { url "https://dl.bintray.com/kotlin/kotlinx" }
+}
+
+dependencies {
+
+    implementation "org.webjars:jquery:3.6.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-html:0.7.2-build-1725'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.3'
+    testImplementation "org.jetbrains.kotlin:kotlin-test-js"
+}
+
+kotlin {
+    js {
+        browser {
+            webpackTask {
+                cssSupport.enabled = true
+            }
+
+            runTask {
+                cssSupport.enabled = true
+            }
+
+            testTask {
+                useKarma {
+                    useChromeHeadless()
+                    webpackConfig.cssSupport.enabled = true
+                }
+            }
+        }
+        binaries.executable()
+    }
+}
+
+build.doLast {
+    configurations.compile.each { File file ->
+        copy {
+            includeEmptyDirs = false
+            from zipTree(file.absolutePath)
+            into "${projectDir}/lib/kotlin"
+            include { fileTreeElement ->
+                def path = fileTreeElement.path
+                path.endsWith(".js") && (path.startsWith("META-INF/resources/") || !path.startsWith("META-INF/"))
+            }
+        }
+    }
+}
+
+

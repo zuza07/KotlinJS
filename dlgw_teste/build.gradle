@@ -1,0 +1,60 @@
+plugins {
+    id 'org.jetbrains.kotlin.js' version '1.4.31'
+}
+
+group 'br.com.dlogica'
+version '1.0-SNAPSHOT'
+
+    task wrapper(type: Wrapper){
+        gradleVersion = '1.4.31'
+    }
+
+repositories {
+    maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
+    mavenCentral()
+}
+
+dependencies {
+    //implementation project(":dlgw_logon")
+    implementation project(":dlgw_araiz")
+    //implementation group: 'org.jetbrains.kotlinx', name: 'kotlinx-html-jvm', version: '0.7.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-js"
+}
+
+kotlin {
+    js {
+        browser {
+            webpackTask {
+                cssSupport.enabled = true
+            }
+
+            runTask {
+                cssSupport.enabled = true
+            }
+
+            testTask {
+                useKarma {
+                    useChromeHeadless()
+                    webpackConfig.cssSupport.enabled = true
+                }
+            }
+        }
+        binaries.executable()
+    }
+}
+
+build.doLast {
+    configurations.compile.each { File file ->
+        copy {
+            includeEmptyDirs = false
+            from zipTree(file.absolutePath)
+            into "${projectDir}/lib/kotlin"
+            println(projectDir)
+            include { fileTreeElement ->
+                def path = fileTreeElement.path
+                path.endsWith(".js") && (path.startsWith("META-INF/resources/") || !path.startsWith("META-INF/"))
+            }
+        }
+    }
+}

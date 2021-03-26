@@ -1,0 +1,2 @@
+rootProject.name = 'dlgw_logon'
+include('dlgw_araiz')

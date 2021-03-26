@@ -1,0 +1,75 @@
+plugins {
+    id 'org.jetbrains.intellij' version '0.7.2'
+}
+
+group 'br.com.dlogica'
+version '1.0-SNAPSHOT'
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.3.2'
+}
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
+/*
+repositories {
+    //maven { url "https://bintray.com/kotlin/js-externals/kotlin-js-jquery" }
+    //google()
+    jcenter()
+
+    mavenCentral()
+    maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
+    maven { url "https://kotlin.bintray.com/js-externals" }
+    //maven { url "https://dl.bintray.com/kotlin/kotlinx" }
+}
+
+dependencies {
+
+    //implementation "org.webjars:jquery:2.1.3"
+    implementation "org.webjars:jquery:3.6.0"
+    //implementation("kotlin.js.externals:kotlin-js-foo:3.6.0")
+    //implementation("kotlin.js.externals:kotlin-js-jquery:3.6.0")
+    //implementation("kotlin.js.externals:kotlin-js-jquery:3.2.0-0")
+    //implementation group: 'org.webjars', name: 'jquery', version: '3.5.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+//    implementation "io.ktor:ktor-server-core:1.5.2"
+//    implementation "io.ktor:ktor-server-netty:1.5.2"
+//    implementation "ch.qos.logback:logback-classic:1.2.3"
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-html:0.7.2-build-1725'
+    //implementation("org.jetbrains.kotlinx:kotlinx-html-js:0.6.12")
+    //implementation 'org.apache.servicemix.specs.jaxp-api-1.4', version: '2.3.0'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.3'
+    //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.3.3")
+    testImplementation "org.jetbrains.kotlin:kotlin-test-js"
+}
+
+ */
+/*
+kotlin {
+    js {
+        browser {
+            webpackTask {
+                cssSupport.enabled = true
+            }
+
+            runTask {
+                cssSupport.enabled = true
+            }
+
+            testTask {
+                useKarma {
+                    useChromeHeadless()
+                    webpackConfig.cssSupport.enabled = true
+                }
+            }
+        }
+        binaries.executable()
+    }
+}
+
+ */
