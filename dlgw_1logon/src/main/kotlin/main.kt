@@ -6,7 +6,7 @@ fun main() {
 }
 
 fun teste(): String {
-    val sTeste = "Teste do zuza 01"
+    val sTeste = "Teste do zuza 02"
     ff.println0(sTeste)
     return "1 - $sTeste"
 }
