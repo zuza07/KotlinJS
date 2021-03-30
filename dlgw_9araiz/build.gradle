@@ -1,0 +1,43 @@
+plugins {
+    id 'org.jetbrains.kotlin.js' version '1.4.31'
+}
+
+group 'br.com.dlogica'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper){
+    gradleVersion = '1.4.31'
+}
+
+repositories {
+    maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-js"
+}
+
+kotlin {
+    js {
+        browser {
+            webpackTask {
+                cssSupport.enabled = true
+            }
+
+            runTask {
+                cssSupport.enabled = true
+            }
+
+            testTask {
+                useKarma {
+                    useChromeHeadless()
+                    webpackConfig.cssSupport.enabled = true
+                }
+            }
+        }
+        binaries.executable()
+    }
+}
