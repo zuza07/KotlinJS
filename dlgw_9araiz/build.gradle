@@ -16,11 +16,14 @@ repositories {
 
 dependencies {
 
+//    implementation npm("style-loader")embuild.gradle
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
     testImplementation "org.jetbrains.kotlin:kotlin-test-js"
 }
 
 kotlin {
+
     js {
         browser {
             webpackTask {
@@ -37,7 +40,29 @@ kotlin {
                     webpackConfig.cssSupport.enabled = true
                 }
             }
+
+            /*
+            distribution {
+                directory = file("$projectDir/lib/")
+            }
+
+             */
         }
         binaries.executable()
+    }
+}
+
+build.doLast {
+    configurations.compile.each { File file ->
+        copy {
+            includeEmptyDirs = false
+            from zipTree(file.absolutePath)
+            into "${projectDir}/lib"
+            println(projectDir)
+            include { fileTreeElement ->
+                def path = fileTreeElement.path
+                path.endsWith(".js") && (path.startsWith("META-INF/resources/") || !path.startsWith("META-INF/"))
+            }
+        }
     }
 }

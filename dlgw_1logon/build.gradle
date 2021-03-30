@@ -10,13 +10,31 @@ task wrapper(type: Wrapper){
 }
 
 repositories {
-    maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
+//    maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
+    jcenter()
     mavenCentral()
 }
 
 dependencies {
 
     implementation project(":dlgw_9araiz")
+
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-html-common
+    //implementation group: 'org.jetbrains.kotlinx', name: 'kotlinx-html-common', version: '0.7.2-build-1711'
+
+    //implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-linuxarm64:1.0-M1-1.4.0-rc"
+// https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-html-common
+//    implementation group: 'org.jetbrains.kotlinx', name: 'kotlinx-html-common', version: '0.6.4'
+
+    // include for client-side
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-html-js
+    //implementation group: 'org.jetbrains.kotlinx', name: 'kotlinx-html-js', version: '0.7.2', ext: 'pom'
+
+//    implementation("org.jetbrains.kotlinx:kotlinx-html-js:0.7.2")
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-html-js:0.7.1'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.2'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
     testImplementation "org.jetbrains.kotlin:kotlin-test-js"
@@ -39,7 +57,30 @@ kotlin {
                     webpackConfig.cssSupport.enabled = true
                 }
             }
+
+            /*
+            distribution {
+                directory = file("$projectDir/lib/")
+                //directory = file("../../dlgw_9araiz/lib/")
+            }
+
+             */
         }
         binaries.executable()
+    }
+}
+
+build.doLast {
+    configurations.compile.each { File file ->
+        copy {
+            includeEmptyDirs = false
+            from zipTree(file.absolutePath)
+            into "${projectDir}/lib"
+            println(projectDir)
+            include { fileTreeElement ->
+                def path = fileTreeElement.path
+                path.endsWith(".js") && (path.startsWith("META-INF/resources/") || !path.startsWith("META-INF/"))
+            }
+        }
     }
 }

@@ -1,12 +1,36 @@
-import kotlinx.browser.document
+import org.w3c.dom.HTMLDivElement
+import services.ControllerLogon
 import utils.ff
+import html.println0
 
-fun main() {
-    document.write("Hello, world! ${teste()}")
+val  htmlDivApaga: HTMLDivElement? = null
+
+fun main(args: Array<String>) {
+//    window.alert("teste")
+    var sUrl = js("document.URL").toString()
+
+    ff.gsUrlLogon = sUrl
+    if (sUrl.contains("/pro/")) {
+        ff.gsDesenvolvedor = "P"
+    }
+
+    if (sUrl.contains("/pro/") || sUrl.contains("/hom/")) {
+        ff.gsCamView = "html/"
+    } else {
+        ff.gsCamView = "main/resources/html/"
+    }
+
+    println0("abrindo main.logon ${ff.gsCamView}")
+    ControllerLogon().abrirCabec("CabecLogon")
 }
 
-fun teste(): String {
-    val sTeste = "Teste do zuza 02"
-    ff.println0(sTeste)
-    return "1 - $sTeste"
+//@JsName("mapear22")
+//fun mapear22(_sTeste: String) {
+//
+//    ControllerLogon().passMapear()
+//}
+
+@JsName("passMapear")
+fun mapear(_sTeste: String) {
+    ControllerLogon().passMapear()
 }
