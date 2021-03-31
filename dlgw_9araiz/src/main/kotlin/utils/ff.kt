@@ -5,6 +5,7 @@ import model.*
 import org.w3c.dom.*
 import org.w3c.dom.events.Event
 import utils.ff.Companion.ffSonumero
+import utils.ff.Companion.gsDesenvolvedor
 import utils.ff.Companion.println0
 import kotlin.browser.document
 import kotlin.dom.addClass
@@ -1151,7 +1152,8 @@ fun ffJavaScript(sTexto: String) {
 }
 
 fun ffJavaScriptLoad1(sTexto: String) {
-    ff.println0("executando ffJavaScript Run")
+    if (!gsDesenvolvedor.equals("P"))
+        ff.println0("ffJavaLoad1 $sTexto")
     eval(sTexto)
 }
 

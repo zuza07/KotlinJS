@@ -24,12 +24,6 @@ fun main(args: Array<String>) {
     ControllerLogon().abrirCabec("CabecLogon")
 }
 
-//@JsName("mapear22")
-//fun mapear22(_sTeste: String) {
-//
-//    ControllerLogon().passMapear()
-//}
-
 @JsName("passMapear")
 fun mapear(_sTeste: String) {
     ControllerLogon().passMapear()
