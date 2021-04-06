@@ -17,6 +17,8 @@ repositories {
 dependencies {
 
 //    implementation npm("style-loader")embuild.gradle
+//    implementation 'org.jetbrains.kotlinx:kotlinx-html-js:0.7.2'
+
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
     testImplementation "org.jetbrains.kotlin:kotlin-test-js"
@@ -27,10 +29,12 @@ kotlin {
     js {
         browser {
             webpackTask {
+                output.libraryTarget = "commonjs2"
                 cssSupport.enabled = true
             }
 
             runTask {
+                output.libraryTarget = "commonjs2"
                 cssSupport.enabled = true
             }
 

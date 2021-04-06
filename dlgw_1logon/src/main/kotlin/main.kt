@@ -6,7 +6,7 @@ import html.println0
 val  htmlDivApaga: HTMLDivElement? = null
 
 fun main(args: Array<String>) {
-//    window.alert("teste")
+
     var sUrl = js("document.URL").toString()
 
     ff.gsUrlLogon = sUrl

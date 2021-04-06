@@ -2,3 +2,5 @@ rootProject.name = 'dlg'
 include 'dlgw_9araiz'
 include 'dlgw_2coletor'
 include 'dlgw_1logon'
+include 'dlgw_3retaguarda'
+

@@ -1,5 +1,6 @@
 package html
 
+import ff_2
 import kotlinx.browser.window
 import kotlinx.html.dom.create
 import kotlinx.html.id
@@ -31,7 +32,7 @@ class Password() {
     private var divDesenv = document.create.div { id = "divDesenv" } as HTMLDivElement
     private var divEmpresa = document.create.div { id = "divEmpresa" } as HTMLDivElement
     private var linkTeste = document.create.a { id = "linkTeste" } as HTMLAnchorElement
-    //TODO
+//    TODO
 
     fun onInput(): (Event) -> Unit {
         return {
@@ -116,8 +117,13 @@ class Password() {
 
         window.alert("não implementado!")
 
+        ff_2().showIndex0()
+
+        //ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"html/Password.html\");")
+
         //ffJavaScript("window.location='$sUrl';")
 
+        /*
         println("executa clickConectar")
         if (txUsuario!!.value.equals("")) {
             ff_1.msgAviso("Informe o usuário")
@@ -162,6 +168,8 @@ class Password() {
                 }
             }
         }
+
+         */
     }
 
     //fun viewEntrar(lemp: List<Empresa>) {
