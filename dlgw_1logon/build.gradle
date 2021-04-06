@@ -1,6 +1,9 @@
 plugins {
     id 'org.jetbrains.kotlin.js' version '1.4.31'
+    //id 'kotlin2js' version '1.4.31'
 }
+
+//apply plugin: 'kotlin2js'
 
 group 'br.com.dlogica'
 version '1.0-SNAPSHOT'
@@ -42,6 +45,7 @@ dependencies {
 
 kotlin {
     js {
+//        useCommonJs()
         browser {
             webpackTask {
                 output.libraryTarget = "commonjs2"
@@ -49,7 +53,7 @@ kotlin {
             }
 
             runTask {
-                output.libraryTarget = "commonjs2"
+                output.libraryTarget = "comonjs2"
                 cssSupport.enabled = true
             }
 
