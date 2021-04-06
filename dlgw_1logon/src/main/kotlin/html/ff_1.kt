@@ -17,6 +17,13 @@ public class ff_1 {
                 ControllerLogon().mensagem("bg-warning", sTexto)
             }
         }
+
+//        fun ffJavaScriptLoad1(sTexto: String) {
+//            if (!ff.gsDesenvolvedor.equals("P"))
+//                ff.println0("ffJavaLoad1 $sTexto")
+//            eval(sTexto)
+//        }
+
     }
 }
 
@@ -37,6 +44,7 @@ fun ffSleep(milisegundos: Int) {
     }
     ff.println0("fim ffSleep ${Date().getTime()}")
 }
+
 
 /*
 fun tbGridNovaLinha2(_tbPadrao: HTMLTableElement?, _iColunas: Int, _bModal: Boolean,

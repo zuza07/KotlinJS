@@ -58,12 +58,17 @@ class Password() {
         ff.println0("UserAgent $teste")
         ff.println0("ff.sCamView ${ff.gsCamView}")
 
-        ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"${ff.gsCamView}Password.html\");")
+//        ffJavaScript("Password.html")
+//        ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"${ff.gsCamView}Password.html\");")
         ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"html/Password.html\");")
-        ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"lib/Password.html\");")
-        ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"resources/html/Password.html\");")
-        ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"main/resources/html/Password.html\");")
-        ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"Password.html\");")
+//        ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"lib/Password.html\");")
+//        ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"resources/html/Password.html\");")
+//        ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"main/resources/html/Password.html\");")
+        //ff_1.ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"Password.html\");")
+        //ff_1.ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"http://www.dlogica.com.br/\");")
+
+        //ff_1.ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"resources/Password.html\");")
+        //ffJavaScriptLoad1("\$(\"#htmlDiv1\").load(\"Password.html\");")
     }
 
     fun start() {
@@ -112,7 +117,6 @@ class Password() {
         window.alert("não implementado!")
 
         //ffJavaScript("window.location='$sUrl';")
-
 
         println("executa clickConectar")
         if (txUsuario!!.value.equals("")) {

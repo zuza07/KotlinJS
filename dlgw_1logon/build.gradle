@@ -75,7 +75,7 @@ build.doLast {
         copy {
             includeEmptyDirs = false
             from zipTree(file.absolutePath)
-            into "${projectDir}/lib"
+            into "${projectDir}/html"
             println(projectDir)
             include { fileTreeElement ->
                 def path = fileTreeElement.path
