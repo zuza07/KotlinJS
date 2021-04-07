@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.js' version '1.4.31'
+    id 'org.jetbrains.kotlin.js' version '1.3.61'
     //id 'kotlin2js' version '1.4.31'
 }
 
@@ -21,7 +21,7 @@ repositories {
 dependencies {
 
     implementation project(":dlgw_9araiz")
-    implementation project(":dlgw_2coletor")
+//    implementation project(":dlgw_2coletor")
 
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-html-common
     //implementation group: 'org.jetbrains.kotlinx', name: 'kotlinx-html-common', version: '0.7.2-build-1711'
@@ -44,16 +44,20 @@ dependencies {
 }
 
 kotlin {
+
+//    sourceSets["main"].dependencies {
+//        implementation(npm("dayjs", "^1.8.20"))
+//    }
+
     js {
-//        useCommonJs()
         browser {
             webpackTask {
-                output.libraryTarget = "commonjs2"
+                this.destinationDirectory = File("${projectDir}/src/main/resources")
                 cssSupport.enabled = true
             }
 
             runTask {
-                output.libraryTarget = "comonjs2"
+                //output.libraryTarget = "comonjs2"
                 cssSupport.enabled = true
             }
 
@@ -63,19 +67,35 @@ kotlin {
                     webpackConfig.cssSupport.enabled = true
                 }
             }
-
-            /*
-            distribution {
-                directory = file("$projectDir/lib/")
-                //directory = file("../../dlgw_9araiz/lib/")
+/*
+            this.webpackTask {
+                this.destinationDirectory = File("src/main/resources")
+            }
+            sourceSets["main"].dependencies {
+                implementation(npm("dayjs", "^1.8.20"))
             }
 
-             */
+ */
+
         }
         binaries.executable()
     }
+
+
 }
 
+tasks {
+    compileKotlinJs {
+        kotlinOptions {
+            moduleKind = "umd"
+        }
+    }
+}
+
+
+
+
+/*
 build.doLast {
     configurations.compile.each { File file ->
         copy {
@@ -90,3 +110,4 @@ build.doLast {
         }
     }
 }
+ */

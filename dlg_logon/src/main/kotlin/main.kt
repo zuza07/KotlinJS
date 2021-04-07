@@ -1,14 +1,24 @@
-import org.w3c.dom.HTMLDivElement
+import html.println0
 import services.ControllerLogon
 import utils.ff
-import html.println0
-
-val  htmlDivApaga: HTMLDivElement? = null
 
 @JsModule("dayjs")
 @JsNonModule
 @JsName("dayjs")
 external fun dayjs(any: Any? = definedExternally): dynamic
+
+/*
+fun main() {
+    println("Hello Kotlin/JS!! ${dayjs()}")
+    println("this year         ${dayjs().year()}")
+    println("Valentine         ${dayjs("2020-02-14")}")
+    println("Formatted date    ${dayjs().format()}")
+
+    println("teste do zuza 01")
+
+    ff.println0("teste da implementação")
+}
+*/
 
 fun main(args: Array<String>) {
 
@@ -33,3 +43,4 @@ fun main(args: Array<String>) {
 fun mapear(_sTeste: String) {
     ControllerLogon().passMapear()
 }
+

@@ -29,12 +29,10 @@ kotlin {
     js {
         browser {
             webpackTask {
-                output.libraryTarget = "commonjs2"
                 cssSupport.enabled = true
             }
 
             runTask {
-                output.libraryTarget = "commonjs2"
                 cssSupport.enabled = true
             }
 

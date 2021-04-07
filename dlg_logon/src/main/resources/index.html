@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dlógica - Logon</title>
+    <!--Import Google Icon Font-->
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+
+    <!--Import materialize.css-->
+    <!--<link type="text/css" rel="stylesheet" href="lib/materialize/css/materialize.css"-->
+
+    <!--media="screen,projection"/>-->
+    <!--Let browser know website is optimized for mobile-->
+
+    <!--    <base href="/">-->
+
+    <link rel="shortcut icon" href="lib/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="lib/dlg/css/dlogica.css">
+
+    <link rel="stylesheet" href="lib/bootstrap/4.0.0/css/bootstrap.min.css" media="screen, projection">
+
+    <script src="lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="lib/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="lib/img/favicon.ico" type="image/x-icon">
+
+
+    <!--    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"><script>-->
+    <script>
+        // Add actual page to history
+        history.pushState(null, null, location.pathname)
+        // Register back button click
+        window.onpopstate = function (e) {
+            // Prevent default action on back button click
+            e.preventDefault()
+            // Add actual page to history again
+            history.pushState(null, null, location.pathname)
+        }
+        var b = document.documentElement;
+        b.setAttribute('data-useragent', navigator.userAgent);
+        b.setAttribute('data-platform', navigator.platform);
+        b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window)) ? ' touch' : '');
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <form onsubmit="return false">
+        <div class="form-group fixed-top" id="htmlDivCabec"></div>
+        <div role="main" class="container dlg-pad-top-15">
+            <div class="form-group dlg-pad-top-60" id="divEspacamento"></div>
+            <div class="form-group" id="htmlDiv1"></div>
+            <div class="form-group" id="htmlDiv2"></div>
+        </div>
+    </form>
+</div>
+
+
+<!--<script src="dlgw_9araiz.js"></script>-->
+<script src="dlg_logon.js"></script>
+<!--<script src="../../build/distributions/dlgw_1logon.js"></script>-->
+<!--<script src="dlgw_2coletor.js"></script>-->
+
+<!--<script src="../../../../dlgw_araiz/src/main/resources/dlgw_araiz.js"></script>-->
+<!--<script src="../../../../dlgw_1logon/lib/dlgw_1logon.js"></script>-->
+<!--<script src="../../../dlgw_9araiz/build/distributions/dlgw_9araiz.js"></script>-->
+
+<!--<script src="../../../../build/js/packages/dlg-dlgw_9araiz/kotlin/dlg-dlgw_9araiz.js"></script>-->
+<!--<script src="../../../../build/js/packages/dlg-dlgw_9araiz/kotlin/dlg-dlgw_9araiz.meta.js"></script>-->
+
+<!--<script src="../../../src/main/resources/lib/kotlin/kotlin.js"></script>-->
+<!--<script src="../../../src/main/resources/lib/kotlin/kotlinx-html-js.js"></script>-->
+<!--<script src="../../../../dlgw_9araiz/build/classes/kotlin/main/dlgw_9araiz.js"></script>-->
+<!--<script src="../../../../dlgw_9araiz/build/classes/kotlin/main/dlgw_9araiz.meta.js"></script>-->
+<!--<script src="../../dlgw_coletor/build/classes/kotlin/main/dlgw_coletor.js"></script>-->
+<!--<script src="../../dlgw_coletor/build/classes/kotlin/main/dlgw_coletor.meta.js"></script>-->
+<!--<script src="../../dlgw_representante/build/classes/kotlin/main/dlgw_representante.js"></script>-->
+<!--<script src="../../dlgw_representante/build/classes/kotlin/main/dlgw_representante.meta.js"></script>-->
+
+<!--<script src="../../../build/js/packages/dlg-dlgw_1logon/kotlin/dlg-dlgw_1logon.js"></script>-->
+<!--<script src="../../../build/js/packages/dlg-dlgw_1logon/kotlin/dlg-dlgw_1logon.meta.js"></script>-->
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <script src="dlg_logon.js"></script>-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<p>Kotlin/JS example do zuza</p>-->
+<!--</body>-->
+<!--</html>-->

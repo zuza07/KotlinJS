@@ -12,3 +12,5 @@ ou
 
 ![image](https://user-images.githubusercontent.com/10074066/112985145-33e77380-9136-11eb-812c-3abf893d370e.png)
 
+estou usando (UMD)
+https://kotlinlang.org/docs/js-modules.html
