@@ -40,11 +40,16 @@ fun main(args: Array<String>) {
     if (sUrl.contains("/pro/") || sUrl.contains("/hom/")) {
         ff.gsCamView = "html/"
     } else {
-        ff.gsCamView = "main/resources/html/"
+        //ff.gsCamView = "main/resources/html/"
+        ff.gsCamView = "kotlin/html/"
     }
 
     println0("abrindo main.logon ${ff.gsCamView}")
     ControllerLogon().abrirCabec("CabecLogon")
 }
 
+@JsName("passMapear")
+fun passMapear() {
+    ControllerLogon().passMapear()
+}
 

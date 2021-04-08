@@ -47,10 +47,4 @@ class Principal(var formContainer: HTMLDivElement) {
             }
         }
     }
-
-    @JsName("passmapear")
-    fun passMapear(_sTeste: String) {
-        ControllerLogon().passMapear()
-    }
-
 }

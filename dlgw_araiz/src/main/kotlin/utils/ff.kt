@@ -1154,6 +1154,7 @@ fun ffJavaScriptLoad1(sTexto: String) {
     if (!gsDesenvolvedor.equals("P"))
         ff.println0("ffJavaLoad1 $sTexto")
     eval(sTexto)
+    //js("$(sTexto)")
 }
 
 fun ffJSAguarda(sTexto: String, cb: (String) -> Unit) {

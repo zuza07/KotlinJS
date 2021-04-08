@@ -15,6 +15,7 @@
 
 <!--    <base href="/">-->
 
+<!--    <script src="dlg_logon.js"></script>c-->
     <link rel="shortcut icon" href="lib/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="lib/dlg/css/dlogica.css">
 
@@ -41,7 +42,9 @@
         b.setAttribute('data-platform', navigator.platform);
         b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window)) ? ' touch' : '');
     </script>
+
 </head>
+
 <body>
 <div id="wrapper">
     <form onsubmit="return false">
@@ -55,8 +58,9 @@
 </div>
 
 <!--<script src="../../../dlgw_araiz/build/dlgw_araiz.js"></script>-->
-<script src="dlg_logon.js"></script>
-<script src="dlgw_araiz.js"></script>
+<script src="../main/dlg_logon.js"></script>
+
+<script src="../main/dlgw_araiz.js"></script>
 <!--<script src="../../build/distributions/dlgw_1logon.js"></script>-->
 <!--<script src="dlgw_2coletor.js"></script>-->
 
