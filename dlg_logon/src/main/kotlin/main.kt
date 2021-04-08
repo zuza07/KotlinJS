@@ -7,16 +7,14 @@ import utils.ff
 @JsNonModule
 @JsName("dlg_logon")
 external fun dlg_logon(any: Any? = definedExternally): dynamic
-
- */
-
-/*
+*/
 
 @JsModule("dayjs")
 @JsNonModule
 @JsName("dayjs")
 external fun dayjs(any: Any? = definedExternally): dynamic
 
+/*
 fun main() {
     println("Hello Kotlin/JS!! ${dayjs()}")
     println("this year         ${dayjs().year()}")
