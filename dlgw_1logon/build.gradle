@@ -92,10 +92,6 @@ tasks {
     }
 }
 
-
-
-
-/*
 build.doLast {
     configurations.compile.each { File file ->
         copy {
@@ -110,4 +106,3 @@ build.doLast {
         }
     }
 }
- */

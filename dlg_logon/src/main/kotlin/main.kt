@@ -20,9 +20,10 @@ fun main() {
 }
 */
 
-fun main(args: Array<String>) {
+//fun main(args: Array<String>) {
+fun main() {
 
-    var sUrl = js("document.URL").toString()
+    val sUrl = js("document.URL").toString()
 
     ff.gsUrlLogon = sUrl
     if (sUrl.contains("/pro/")) {
