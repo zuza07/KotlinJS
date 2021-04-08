@@ -3,16 +3,13 @@
 EXEMPLO
 
 Este projeto tem por objetivo ser um exemplo do funcionamento da criação de módulos usando Gradle, para rodar especificamente módulos kotlinJS.
+Estou usando (UMD) conforme o exemplo abaixo.
+https://kotlinlang.org/docs/js-modules.html
 
 Ainda não está funcional!
 
-./gradlew run
+Para fazer a compilação pressione F11.
+Para ver a interface desse FrontEnd abra o arquivo index.html que está no módulo dlg_logon, clique com o botão direito do mouse e escolha o navegador.
 
-ou
+Por enquando é isso.
 
-![image](https://user-images.githubusercontent.com/10074066/112985145-33e77380-9136-11eb-812c-3abf893d370e.png)
-
-estou usando (UMD)
-https://kotlinlang.org/docs/js-modules.html
-estou usando (UMD)
-https://kotlinlang.org/docs/js-modules.html
