@@ -8,7 +8,8 @@ https://kotlinlang.org/docs/js-modules.html
 
 Ainda não está funcional!
 
-Para fazer a compilação pressione F11.
+Abra o projeto no Intellij.
+Execute o Build.
 Para ver a interface desse FrontEnd abra o arquivo index.html que está no módulo dlg_logon, clique com o botão direito do mouse e escolha o navegador.
 
 Por enquando é isso.
