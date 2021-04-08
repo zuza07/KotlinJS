@@ -8,3 +8,10 @@ fun main() { //teste de inclusao 11/09/19
     else
         console.log("Homologação teste ${ff.gsEmpVersao}")
 }
+
+/*
+@JsName("passMapear")
+fun passMapear(_sTeste: String) {
+    println("que coisa")
+}
+*/

@@ -2,12 +2,21 @@ import html.println0
 import services.ControllerLogon
 import utils.ff
 
+/*
+@JsModule("dlg_logon")
+@JsNonModule
+@JsName("dlg_logon")
+external fun dlg_logon(any: Any? = definedExternally): dynamic
+
+ */
+
+/*
+
 @JsModule("dayjs")
 @JsNonModule
 @JsName("dayjs")
 external fun dayjs(any: Any? = definedExternally): dynamic
 
-/*
 fun main() {
     println("Hello Kotlin/JS!! ${dayjs()}")
     println("this year         ${dayjs().year()}")
@@ -20,8 +29,8 @@ fun main() {
 }
 */
 
-//fun main(args: Array<String>) {
-fun main() {
+fun main(args: Array<String>) {
+//fun main() {
 
     val sUrl = js("document.URL").toString()
 
@@ -40,8 +49,8 @@ fun main() {
     ControllerLogon().abrirCabec("CabecLogon")
 }
 
-@JsName("passMapear")
-fun mapear(_sTeste: String) {
+@JsName("passMapear01")
+fun passMapear(_sTeste: String) {
     ControllerLogon().passMapear()
 }
 
