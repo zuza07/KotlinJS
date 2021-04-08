@@ -47,8 +47,4 @@ fun main(args: Array<String>) {
     ControllerLogon().abrirCabec("CabecLogon")
 }
 
-@JsName("passMapear01")
-fun passMapear(_sTeste: String) {
-    ControllerLogon().passMapear()
-}
 

@@ -12,6 +12,7 @@ import services.ControllerLogon
 import kotlin.browser.document
 
 class Principal(var formContainer: HTMLDivElement) {
+
     private var btTarefas: HTMLButtonElement? = null
 
     fun show() {
@@ -46,4 +47,10 @@ class Principal(var formContainer: HTMLDivElement) {
             }
         }
     }
+
+    @JsName("passmapear")
+    fun passMapear(_sTeste: String) {
+        ControllerLogon().passMapear()
+    }
+
 }
